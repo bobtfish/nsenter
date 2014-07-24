@@ -1,0 +1,17 @@
+--- nseneter.olde.c	2014-07-24 20:36:45.678762473 +0000
++++ nsenter.c	2014-07-24 20:26:30.630498069 +0000
+@@ -328,11 +328,13 @@
+ 	if (do_fork == 1)
+ 		continue_as_child();
+
+-	if (namespaces & CLONE_NEWUSER) {
++	if (gid > 0) {
+ 		if (setgroups(0, NULL))		/* drop supplementary groups */
+ 			err(EXIT_FAILURE, _("setgroups failed"));
+ 		if (setgid(gid) < 0)
+ 			err(EXIT_FAILURE, _("setgid failed"));
++	}
++	if (uid > 0) {
+ 		if (setuid(uid) < 0)
+ 			err(EXIT_FAILURE, _("setuid failed"));
+ 	}
