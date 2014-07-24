@@ -1,3 +1,15 @@
+# WARNING
+
+DO NOT USE THIS CONTAINER UNLESS YOU KNOW WHAT YOU ARE DOING.
+
+You probably want the upstream version https://github.com/jpetazzo/nsenter
+
+This applies *EXPERIMENTAL* patches to the nsenter binary which is generated
+which may lower your system security, eat your firstborn or cause demons to
+leap out of your nose.
+
+You have been warned!
+
 # nsenter in a can
 
 This is a small Docker recipe to build `nsenter` easily and install it in your
